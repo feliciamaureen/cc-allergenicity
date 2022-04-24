@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+     </head>
+   <body>
+        <div class = "banner">
+            <h1>Allergenicity</h1>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <h3>Your ingredients</h3>
+                    <ul>
+                        {% for child_value in tokens %}
+                            <li>{{ child_value }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <div class="column">
+                <h3>Potential Allergens</h3>
+                <ul>
+                    {% for child_value in matches %}
+                        <li>{{ child_value }}</li>
+                    {% endfor %}
+                </ul>
+                {% with messages = get_flashed_messages() %}  
+                    {% if messages %}  
+                        {% for message in messages %}  
+                            <p>{{ message }}</p>  
+                        {% endfor %}  
+                    {% endif %}  
+                {% endwith %}
+            </div>
+        </div>
+  
+          
+    </body>
+</html>

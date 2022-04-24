@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+   </head>
+
+   <body>
+      <div class = "banner">
+         <h1>Allergenicity</h1>
+     </div>
+
+     <div class="row">
+      <div class="column">
+         <h3>About Us</h3>
+            <p>We understand that sometimes food packaging don't tell you everything and can lead to unpleasant symptoms, or maybe sometimes you just forget to check</p>
+            <p>Allergenicity can help you with all your ingredient woes, never get symptoms from a sneaky ingredient ever again</p>
+            <p>All you need to do is upload a picture of your food's ingredients, and we'll take it from there!</p>
+
+            <h3>How to use</h3>
+            <ol>
+               <li>Take a picture of your food's ingredient list</li>
+               <li>Upload your image</li>
+               <li>Submit and watch the app detect allergens in your food!</li>
+            </ol>
+
+            <h3>Upload here!</h3>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+               <input type="file" name="file" value="file">
+               <input type="submit" name="upload" value="Upload" class="btn btn-success" a href=result>
+            </form>
+      </div>
+      <div class="column">
+         <h3>Learn more!</h3>
+            {{advice}} 
+      </div>
+    </div>
+   </body>
+</html>
