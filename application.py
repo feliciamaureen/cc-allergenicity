@@ -16,7 +16,6 @@ app.secret_key = b'secretKey'
 def home():
     #Call Lambda function getAllergenAdvice - shows content from DynamoDB
     advice = getAdviceAPIGateway()
-
     #call lambda function to show allergen stats 
     return render_template("application.html", advice = advice)
 

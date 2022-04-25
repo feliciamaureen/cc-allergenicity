@@ -26,6 +26,11 @@
     display: flex;
   }
   
-  .column {
+.column{
     flex: 50%;
   }
+
+img{
+    width: auto;
+    height: 500px
+}

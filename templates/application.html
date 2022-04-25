@@ -33,7 +33,13 @@
       </div>
       <div class="column">
          <h3>Learn more!</h3>
-            {{advice}} 
+            <img src="{{ epipenImg }}" >
+            <img src="{{url_for('static', filename='images/epipen.jpg')}}" alt="epipen"/>
+            <p>Image from the Australasian Society of Clinical Immunology and Allergy (ASCIA)</p>
+         <h3>Emergency Information</h3>  
+               {% for child_value in advice %}
+                  <p>{{child_value}}</p>
+               {% endfor %}
       </div>
     </div>
    </body>

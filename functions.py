@@ -7,7 +7,7 @@ from config import *
 #Query dynamodb for allergen advice 
 def getAdviceAPIGateway():
     r = requests.get('https://fyo4xgtvib.execute-api.us-east-1.amazonaws.com/test')
-    return r.text
+    return r.json()
 
 #detect text in uploaded image with rekognition, send tokens to dynamo
 def rekognitionAddToDynamo():

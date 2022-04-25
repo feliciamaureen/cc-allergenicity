@@ -6,13 +6,12 @@ def lambda_handler(event, context):
         dynamo = boto3.resource('dynamodb')
         table = dynamo.Table('cc-info')
     
-        response = table.get_item(
-            Key={
-                'ID': '1'
-            }
-        )
-    
-        return response['Item'].get('infoVal')
+        advice = table.scan(AttributesToGet=['infoVal'])
+        adviceList = list(advice.values())
+        a = list(adviceList[0])
+        allAdvice = [d['infoVal'] for d in a]
+
+        return allAdvice
 
     except Exception as e: 
         print(str(e))
